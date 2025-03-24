@@ -1,0 +1,13 @@
+line-length = 120
+
+[lint]
+select = ["A", "B", "Q", "W", "PL", "E", "I", "F", "SIM"]
+
+[lint.flake8-quotes]
+inline-quotes = "single"
+
+[format]
+quote-style = "single"
+indent-style = "space"
+docstring-code-format = true
+docstring-code-line-length = 72

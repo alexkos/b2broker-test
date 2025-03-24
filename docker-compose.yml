@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres
+    container_name: payment-system-db
+    env_file:
+      - .env
+    volumes:
+      - payment_system_data:/var/lib/postgresql/data/
+    ports:
+      - '5432:5432'
+
+  web:
+    container_name: payment-system-web
+    image: payment-api
+    build: .
+    restart: on-failure
+    command: python3 manage.py runserver 0.0.0.0:8000
+    working_dir: /app/payment_system
+    volumes:
+      - ./payment_system:/app/payment_system
+    ports:
+      - '8000:8000'
+    env_file:
+      - .env
+    depends_on:
+      - db
+
+volumes:
+  payment_system_data:

@@ -1,32 +1,32 @@
-1. Deploy project locally:
+# Deploy project locally:
 
-1.1 Set settings into .env file - copy variables from env.example
+## Set settings into .env file - copy variables from env.example
 
-1.2 Build project
+### Build project
 `docker-compose -f docker-compose.yml up --build`
 
-1.3 Apply migrations
+### Apply migrations
 `docker-compose -f docker-compose.yml run --rm web python manage.py migrate`
 
-1.4 Initiate data
+### Initiate data
 `docker-compose -f docker-compose.yml run --rm web python manage.py initiate_data`
 
-3. Make tests
+## Make tests
 `docker-compose -f docker-compose.yml run --rm web pytest`
 
 
-API:
+## API:
 
 1. create wallet
 
-'POST http://localhost:8000/wallets/create'
+POST <http://localhost:8000/wallets/create>
 params:
 - label
 
 
 2. create credit transaction
 
-'POST http://localhost:8000/transactions/credit/new'
+POST <http://localhost:8000/transactions/credit/new>
 
 params:
 
@@ -35,7 +35,7 @@ params:
 
 3. create debit transaction
 
-'POST http://localhost:8000/transactions/debit/new'
+POST <http://localhost:8000/transactions/debit/new>
 
 params:
 
@@ -45,7 +45,7 @@ params:
 
 4. get wallets
 
-'GET http://localhost:8000/wallets/'
+GET <http://localhost:8000/wallets/>
 filter params:
 
 - min_balance
@@ -62,7 +62,7 @@ pagination params:
 
 5. get transactions
 
-'GET http://localhost:8000/wallets/'
+GET <http://localhost:8000/wallets/>
 filter params:
 
 - min_amount

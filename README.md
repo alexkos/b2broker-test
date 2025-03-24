@@ -17,14 +17,14 @@
 
 ## API:
 
-1. create wallet
+### create wallet
 
 POST <http://localhost:8000/wallets/create>
 params:
 - label
 
 
-2. create credit transaction
+### create credit transaction
 
 POST <http://localhost:8000/transactions/credit/new>
 
@@ -33,7 +33,7 @@ params:
 - amount
 - wallet
 
-3. create debit transaction
+### create debit transaction
 
 POST <http://localhost:8000/transactions/debit/new>
 
@@ -43,7 +43,7 @@ params:
 - wallet
 
 
-4. get wallets
+### get wallets
 
 GET <http://localhost:8000/wallets/>
 filter params:
@@ -60,7 +60,7 @@ pagination params:
 
 - page
 
-5. get transactions
+### get transactions
 
 GET <http://localhost:8000/wallets/>
 filter params:
